@@ -8,11 +8,17 @@ const loadHospitals = async() => {
     await models.Hospitals.syncHospitals(utils, dataSources);
 }
 
+const loadLocationData = async () => {
+    await models.MetaData.syncLocationData();
+}
+
 try {
     if (process.argv.length > 2) {
         const option = process.argv[2];
         if (option === 'hospitals') {
             loadHospitals();
+        } else if (option === 'locations') {
+            loadLocationData();
         }
     } else {
         const dataSources = _.get(config, 'dataSources') || {};
