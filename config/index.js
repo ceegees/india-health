@@ -15,7 +15,14 @@ module.exports = {
             ]
         },
         localBodies: {
-
+            name: 'Local Bodies',
+            sources: [
+                {
+                    url: 'https://raw.githubusercontent.com/ceegees/india-public-domain-data/master/territorial/allVillagesofIndia.csv',
+                    provider: 'github',
+                    uniqueRowIdentifier: 'S.No.'
+                }
+            ]
         } 
     }
 };

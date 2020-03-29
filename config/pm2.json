@@ -1,0 +1,22 @@
+{
+    "apps": [{
+        "name": "IndiaHealth",
+        "ignore_watch": [
+            "node_modules", 
+            "public",
+            ".git",
+            "india-health.log",
+            "uploads",
+            "src"
+        ],
+        "script": "bin/www",
+        "log_file": "./india-health.log",
+        "merge_logs": true,
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "env": {
+            "NODE_ENV": "development",
+            "watch": true,
+            "APP_HOST": "http://localhost"
+        }
+    }]
+}

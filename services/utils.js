@@ -1,6 +1,6 @@
 const csv = require('csv-parser')
 const axios = require('axios');
-const fs = require('fs')
+const fs = require('fs');
 
 const loadFromCsv = async (dataSource) => {
     console.log(`****Loading data for ${dataSource.name}*****`);
@@ -106,7 +106,19 @@ const validate = {
     },
 }
 
+const downloadFile = async (url, dest) => {
+    try {
+        const resp = await makeRequest({
+            url
+        });
+        await createFileAsync(dest, resp.data);
+    } catch (ex) {
+        throw ex;
+    }
+}
+
 module.exports = {
     loadFromCsv,
-    validate
+    validate,
+    downloadFile
 }

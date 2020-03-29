@@ -2,17 +2,25 @@
   "name": "india-health",
   "version": "1.0.0",
   "description": "Platoform to capture the health infrastructure capacity across india in a crowdsourced manner",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "axios": "^0.19.2",
+    "cookie-parser": "~1.4.4",
     "csv-parser": "^2.3.2",
+    "csvtojson": "^2.0.10",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "^1.6.3",
     "lodash": "^4.17.15",
+    "morgan": "~1.9.1",
     "pg": "^7.18.2",
     "sequelize": "^5.21.5",
     "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "load": "node ./services/load.js"
   },
