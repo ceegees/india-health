@@ -8,13 +8,13 @@ const { Op } = Sequelize;
 /* List meta data */
 router.get("/list", async (req, res, next) => {
     try {
-        let { type, parentId, search } = req.query;
-        if (!type) {
-            throw new Error('type is required.');
+        let { category, parentId, search } = req.query;
+        if (!category) {
+            throw new Error('category is required.');
         }
 
         const where = {
-            type
+            category
         };
 
         if (parentId != undefined) {
