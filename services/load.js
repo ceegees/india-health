@@ -69,7 +69,7 @@ const loadLocalBodies = async () => {
                 });
                 if (!state) {
                     state = await models.MetaData.create({
-                        parentId: country.id,
+                        parent_id: country.id,
                         name: json.stateNameEn,
                         type: 'geo_info',
                         unique_id: sUqId,
@@ -88,7 +88,7 @@ const loadLocalBodies = async () => {
                 });
                 if(!district) {
                     district = await models.MetaData.create({
-                        parentId: state.id,
+                        parent_id: state.id,
                         name: json.distNameEn,
                         type: 'geo_info',
                         unique_id: dUqId,
@@ -111,16 +111,16 @@ const loadLocalBodies = async () => {
             }
             if (!village) {
                 await models.MetaData.create({
-                    parentId: district.id,
+                    parent_id: district.id,
                     type:'geo_info',
                     name: vName.join(' - '),
-                    unique_id:vUqId,
+                    unique_id: vUqId,
                     code: json.villageCode,
                     category: 'village'
                 })
             } else {
                 village.update({
-                    parentId: district.id,
+                    parent_id: district.id,
                     type:'geo_info',
                     name: vName.join(' - '),
                     unique_id: vUqId,
