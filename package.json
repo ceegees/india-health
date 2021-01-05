@@ -4,7 +4,7 @@
   "description": "Platoform to capture the health infrastructure capacity across india in a crowdsourced manner",
   "main": "app.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cookie-parser": "~1.4.4",
     "csv-parser": "^2.3.2",
     "csvtojson": "^2.0.10",
